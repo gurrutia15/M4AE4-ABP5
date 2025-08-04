@@ -1,5 +1,5 @@
 let ingreso = document.getElementById('numero_ingresado')
-let btnIngresar  = document.getElementById('btn_ingresar')
+let btnIngresar = document.getElementById('btn_ingresar')
 let respuesta = document.getElementById('resultado')
 
 
@@ -7,28 +7,28 @@ let respuesta = document.getElementById('resultado')
 // Construya una función que imprima si un número es primo
 // o no. Los números primos son aquellos que son divisibles solo
 // por 1 y por sí mismos. 
- 
-function encuentraPrimo(primo){
+
+function encuentraPrimo(primo) {
     primo = parseInt(primo)
-    if(isNaN(primo)){
+    if (isNaN(primo)) {
         respuesta.innerHTML = 'Debe ingresar un número'
         return
     }
-    if (primo < 2){
+    if (primo < 2) {
         respuesta.innerHTML = 'No es número primo'
         return
-    } 
+    }
     if (primo === 2) {
         respuesta.innerHTML = 'Es número primo'
         return
     }
-    if (primo%2 === 0){
+    if (primo % 2 === 0) {
         respuesta.innerHTML = 'No es número primo'
         return
     }
-    
-    for (let i=3; i <= Math.sqrt(primo); i+=2){
-        if(primo % i === 0){
+
+    for (let i = 3; i <= Math.sqrt(primo); i += 2) {
+        if (primo % i === 0) {
             respuesta.innerHTML = 'No es número primo'
             return
         }
@@ -36,7 +36,7 @@ function encuentraPrimo(primo){
     respuesta.innerHTML = 'Es número primo';
 }
 
-btnIngresar.addEventListener('click', function(e){
+btnIngresar.addEventListener('click', function (e) {
     e.preventDefault()
     let valorIngresado = ingreso.value
     encuentraPrimo(valorIngresado)
